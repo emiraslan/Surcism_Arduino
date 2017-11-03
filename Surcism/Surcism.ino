@@ -22,16 +22,16 @@ const short right = A2;
 const bool debug_mode = true;
 
 float barrier = 558;
- 
-  float left_barrier = 580;
-  float middle_barrier = 480;
-  float right_barrier = 540;
 
-short M1_move = 110;
-short M2_move = 110;
+float left_barrier = 580;
+float middle_barrier = 480;
+float right_barrier = 540;
 
-short M1_move_s = 40;
-short M2_move_s = 40;
+short M1_move = 100;
+short M2_move = 100;
+
+short M1_move_s = 35;
+short M2_move_s = 35;
 
 short M1_stop = 0;
 short M2_stop = 0;
