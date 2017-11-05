@@ -9,11 +9,11 @@ const short M2R = 11;
 int M1E = 8; 
 int M2E = 8; 
 
-short M1_move = 240;
-short M2_move = 240;
+short M1_move = 180;
+short M2_move = 180;
 
-short M1_move_s = 145;
-short M2_move_s = 145;
+short M1_move_s = 0;
+short M2_move_s = 0;
 
 short M1_stop = 0;
 short M2_stop = 0;
@@ -60,8 +60,8 @@ char prev_pos = forward_dir;
 #define trigPin 3
 #define echoPin 4
 #define avioding_dist 25 //cm
-#define back_delay 1700 
-#define turn_delay 1600
+#define back_delay 1000 
+#define turn_delay 600
 
 int duration;
 short distance;

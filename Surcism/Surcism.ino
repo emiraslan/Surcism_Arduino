@@ -16,6 +16,7 @@ char cur_state = 'u';
 #define ultrasonic 'u'
 #define remote_control 'r'
 #define self_balance 's'
+#define motor_check 'm'
 
 void setup() {
   Serial.begin(9600);
@@ -58,6 +59,17 @@ void loop() {
 
     case self_balance: 
     //Todo: not implemented yet...
+    break;
+
+    case motor_check: 
+      goForward();
+      delay(3000);
+      goBackward();
+      delay(3000);
+      goLeft();
+      delay(3000);
+      goRight();
+      delay(3000);
     break;
 
     default:

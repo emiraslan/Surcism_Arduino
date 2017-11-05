@@ -97,9 +97,9 @@ void startInfraredRobot(){
   bool rightIsBlack = data.isRightBlack();
    
   if(leftIsBlack && middleIsBlack && rightIsBlack){ //XXX
-    cur_pos = forward_dir;
+    cur_pos = right_dir;
     checkForDelay();
-    goForward();
+    goRight();
   }else if(!leftIsBlack && !middleIsBlack && !rightIsBlack){ // OOO
 //    cur_pos = forward_dir;
 //    checkForDelay();
@@ -110,9 +110,9 @@ void startInfraredRobot(){
     goForward();
   }
   else if(leftIsBlack && !middleIsBlack && rightIsBlack){ // XOX
-    cur_pos = forward_dir;
+    cur_pos = right_dir;
     checkForDelay();
-    goForward();
+    goRight();
   }
   else if(leftIsBlack && !middleIsBlack && !rightIsBlack){ // XOO
     cur_pos = left_dir;
