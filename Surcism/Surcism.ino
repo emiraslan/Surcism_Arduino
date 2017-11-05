@@ -5,7 +5,7 @@
 //    Madina Shukurlu
 //    Ramziyya Garazade
 
-char cur_state = 'u';
+char cur_state = 'i';
 
 #include "Globals.h"
 #include "MotorControl.h"
