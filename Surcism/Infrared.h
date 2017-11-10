@@ -65,7 +65,7 @@ SensorData readData(){
   data.right_data = analogRead(right);
 
   if(debug_mode){
-    data.displayData();
+  //  data.displayData();
   }
 
   return data;

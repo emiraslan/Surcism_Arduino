@@ -66,6 +66,30 @@ char prev_pos = forward_dir;
 int duration;
 short distance;
 
+  //  Remote Control
+char command;
 
 	//Globals
-const bool debug_mode = false;
+const bool debug_mode = true;
+String str;
+char proto;
+char com;
+
+char getBlueData(char t){
+     char temp = '0';
+     str = "";
+     for (int i=0; Serial.available() > 0; i++){
+          temp = ((byte)Serial.read());
+          if(i==0) proto = temp;
+          
+          if(debug_mode){
+            Serial.print(t);
+            Serial.print(" Here: ");
+            Serial.print(temp);
+            Serial.print(" \t ");
+            Serial.println(proto);
+          }
+       }
+     com = temp;
+     return proto;    
+} 

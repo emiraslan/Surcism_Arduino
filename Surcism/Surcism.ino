@@ -11,6 +11,7 @@ char cur_state = 'i';
 #include "MotorControl.h"
 #include "Infrared.h"
 #include "Ultrasonic.h"
+#include "RemoteControl.h"
 
 #define infrared 'i'
 #define ultrasonic 'u'
@@ -41,10 +42,19 @@ void setup() {
 
   delay(action_delay);
   
-  startMotors();
+  stopMotors();
 }
 
 void loop() {
+
+    if('m' == getBlueData('O'))
+    {
+      Serial.println("Done");
+      cur_state = com;
+    }
+ // Serial.print("State: ");
+//  Serial.println(cur_state);
+
   switch(cur_state){
     case infrared:
       startInfraredRobot();
@@ -55,7 +65,7 @@ void loop() {
     break;
     
     case remote_control:
-    //Todo: not implemented yet...
+      startRemoteControl();
     break;
 
     case self_balance: 

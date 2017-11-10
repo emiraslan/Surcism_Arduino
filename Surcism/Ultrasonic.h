@@ -23,7 +23,7 @@ if(distance <= avioding_dist){
 }
 
 // Prints the distance on the Serial Monitor
-Serial.print("Distance: ");
-Serial.print(distance);
-Serial.println(" cm");
+//Serial.print("Distance: ");
+//Serial.print(distance);
+//Serial.println(" cm");
 }
