@@ -9,8 +9,8 @@ const short M2R = 11;
 int M1E = 8; 
 int M2E = 8; 
 
-short M1_move = 70;
-short M2_move = 70;
+short M1_move = 255;
+short M2_move = 255;
 
 short M1_move_s = 0;
 short M2_move_s = 0;
