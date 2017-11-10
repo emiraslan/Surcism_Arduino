@@ -9,11 +9,11 @@ const short M2R = 11;
 int M1E = 8; 
 int M2E = 8; 
 
-short M1_move = 255;
-short M2_move = 255;
+short M1_move = 100;
+short M2_move = 100;
 
-short M1_move_s = 0;
-short M2_move_s = 0;
+short M1_move_s = 65;
+short M2_move_s = 65;
 
 short M1_stop = 0;
 short M2_stop = 0;
@@ -23,10 +23,10 @@ const short leftDisplay = 2;
 const short middleDisplay = 5;
 const short rightDisplay = 7;
 
-const short initial_delay = 10; 
+const short initial_delay = 0; 
 const short action_delay = 3000; 
 const short input_delay = 1;
-const short motor_delay = 10; 
+const short motor_delay = 1; 
 
 const short left = A0;
 const short middle = A1;
@@ -68,4 +68,4 @@ short distance;
 
 
 	//Globals
-const bool debug_mode = true;
+const bool debug_mode = false;

@@ -97,46 +97,46 @@ void startInfraredRobot(){
   bool rightIsBlack = data.isRightBlack();
    
   if(leftIsBlack && middleIsBlack && rightIsBlack){ //XXX
-    cur_pos = right_dir;
-    checkForDelay();
+    //cur_pos = right_dir;
+    //checkForDelay();
     goRight();
   }else if(!leftIsBlack && !middleIsBlack && !rightIsBlack){ // OOO
 //    cur_pos = forward_dir;
 //    checkForDelay();
 //    goForward();
   }else if(!leftIsBlack && middleIsBlack && !rightIsBlack){ // OXO
-    cur_pos = forward_dir;
-    checkForDelay();
+    //cur_pos = forward_dir;
+    //checkForDelay();
     goForward();
   }
   else if(leftIsBlack && !middleIsBlack && rightIsBlack){ // XOX
-    cur_pos = right_dir;
-    checkForDelay();
+    //cur_pos = right_dir;
+    //checkForDelay();
     goRight();
   }
   else if(leftIsBlack && !middleIsBlack && !rightIsBlack){ // XOO
-    cur_pos = left_dir;
-    checkForDelay();
+   // cur_pos = left_dir;
+    //checkForDelay();
     goLeft();
   }
   else if(leftIsBlack && middleIsBlack && !rightIsBlack){ // XXO
-    cur_pos = left_dir;
-    checkForDelay();
+    //cur_pos = left_dir;
+    //checkForDelay();
     goLeft();
   }
   else if(!leftIsBlack && middleIsBlack && rightIsBlack){ // OXX
-    cur_pos = right_dir;
-    checkForDelay();
+    //cur_pos = right_dir;
+    //checkForDelay();
     goRight();
   }
   else if(!leftIsBlack && !middleIsBlack && rightIsBlack){ // OOX
-    cur_pos = right_dir;
-    checkForDelay();
+    //cur_pos = right_dir;
+    //checkForDelay();
     goRight();
   }
   else{
-    cur_pos = backward_dir;
-    checkForDelay();
+    //cur_pos = backward_dir;
+    //checkForDelay();
     goBackward();
   }
 
@@ -158,5 +158,5 @@ void startInfraredRobot(){
     digitalWrite(rightDisplay, LOW);  
   }
 
-  delay(input_delay);
+  //delay(input_delay);
  }

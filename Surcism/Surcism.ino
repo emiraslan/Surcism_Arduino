@@ -5,7 +5,7 @@
 //    Madina Shukurlu
 //    Ramziyya Garazade
 
-char cur_state = 'u';
+char cur_state = 'i';
 
 #include "Globals.h"
 #include "MotorControl.h"
@@ -19,6 +19,7 @@ char cur_state = 'u';
 #define motor_check 'm'
 
 void setup() {
+  if(debug_mode)
   Serial.begin(9600);
 
   // Infrared Line-Follower
