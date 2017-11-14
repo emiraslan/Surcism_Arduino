@@ -9,11 +9,11 @@ const short M2R = 11;
 int M1E = 8; 
 int M2E = 8; 
 
-short M1_move = 100;
-short M2_move = 100;
+short M1_move = 170;
+short M2_move = 170;
 
-short M1_move_s = 65;
-short M2_move_s = 65;
+short M1_move_s = 80;
+short M2_move_s = 80;
 
 short M1_stop = 0;
 short M2_stop = 0;
@@ -67,29 +67,25 @@ int duration;
 short distance;
 
   //  Remote Control
-char command;
+  char command;
 
 	//Globals
-const bool debug_mode = true;
-String str;
-char proto;
-char com;
+  const bool debug_mode = false;
+  String str;
+  char proto;
+  char com;
 
-char getBlueData(char t){
-     char temp = '0';
-     str = "";
-     for (int i=0; Serial.available() > 0; i++){
+char getBlueData(){
+     char temp = 0;
+     
+     if (Serial.available() > 0){
           temp = ((byte)Serial.read());
-          if(i==0) proto = temp;
           
           if(debug_mode){
-            Serial.print(t);
-            Serial.print(" Here: ");
-            Serial.print(temp);
-            Serial.print(" \t ");
-            Serial.println(proto);
+            Serial.print("Here: ");
+            Serial.println(temp);
           }
        }
-     com = temp;
-     return proto;    
+     
+     return temp;    
 } 

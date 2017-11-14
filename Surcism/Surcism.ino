@@ -5,7 +5,7 @@
 //    Madina Shukurlu
 //    Ramziyya Garazade
 
-char cur_state = 'i';
+char cur_state = '1';
 
 #include "Globals.h"
 #include "MotorControl.h"
@@ -13,14 +13,17 @@ char cur_state = 'i';
 #include "Ultrasonic.h"
 #include "RemoteControl.h"
 
-#define infrared 'i'
-#define ultrasonic 'u'
-#define remote_control 'r'
-#define self_balance 's'
-#define motor_check 'm'
+
+#define min_state '0'
+#define infrared '1'
+#define ultrasonic '2'
+#define remote_control '3'
+#define self_balance '4'
+#define motor_check '5'
+#define max_state '6'
 
 void setup() {
-  if(debug_mode)
+  //if(debug_mode)
   Serial.begin(9600);
 
   // Infrared Line-Follower
@@ -42,18 +45,24 @@ void setup() {
 
   delay(action_delay);
   
-  stopMotors();
+  //stopMotors();
+  startMotors();
 }
 
 void loop() {
-
-    if('m' == getBlueData('O'))
-    {
-      Serial.println("Done");
-      cur_state = com;
+   char temp = getBlueData();
+   
+   if(min_state < temp && max_state > temp)
+   {
+    // Serial.print(temp);
+    // Serial.println("\tDone");
+     cur_state = temp;
+   }else{
+      command = temp;
     }
- // Serial.print("State: ");
-//  Serial.println(cur_state);
+
+   //  Serial.print(temp);
+   //  Serial.println("\tNormally");
 
   switch(cur_state){
     case infrared:
@@ -82,7 +91,6 @@ void loop() {
       goRight();
       delay(3000);
     break;
-
     default:
       startUltrasonicRobot();
     break;
