@@ -9,14 +9,16 @@ const short M2R = 11;
 int M1E = 8; 
 int M2E = 8; 
 
-short M1_move = 170;
-short M2_move = 170;
+short M1_move = 200;
+short M2_move = 250;
 
-short M1_move_s = 80;
+short M1_move_s = 70;
 short M2_move_s = 80;
 
 short M1_stop = 0;
 short M2_stop = 0;
+
+boolean motorIsEnabled = false;
 
 // Infrared - Line Follower
 const short leftDisplay = 2;
@@ -59,9 +61,9 @@ char prev_pos = forward_dir;
 
 #define trigPin 3
 #define echoPin 4
-#define avioding_dist 25 //cm
-#define back_delay 1000 
-#define turn_delay 600
+#define avioding_dist 20 //cm
+#define back_delay 850 
+#define turn_delay 1100
 
 int duration;
 short distance;
@@ -70,7 +72,7 @@ short distance;
   char command;
 
 	//Globals
-  const bool debug_mode = false;
+  const bool debug_mode = true;
   String str;
   char proto;
   char com;
@@ -82,10 +84,11 @@ char getBlueData(){
           temp = ((byte)Serial.read());
           
           if(debug_mode){
-            Serial.print("Here: ");
-            Serial.println(temp);
+            //Serial.print("Here: ");
+           // Serial.println(temp);
           }
        }
      
      return temp;    
 } 
+

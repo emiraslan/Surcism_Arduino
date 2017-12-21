@@ -5,7 +5,7 @@
 //    Madina Shukurlu
 //    Ramziyya Garazade
 
-char cur_state = '1';
+char cur_state = '3';
 
 #include "Globals.h"
 #include "MotorControl.h"
@@ -45,8 +45,8 @@ void setup() {
 
   delay(action_delay);
   
-  //stopMotors();
-  startMotors();
+  stopMotors();
+  
 }
 
 void loop() {
@@ -96,6 +96,7 @@ void loop() {
     break;
     }
 }
+
 
 
 

@@ -14,7 +14,7 @@ duration = pulseIn(echoPin, HIGH);
 // Calculating the distance
 distance= duration*0.034/2;
 
-if(distance <= avioding_dist){
+if(distance <= avioding_dist && distance >=1){
 	goForward();
 	delay(back_delay);
 	goLeft();
@@ -24,6 +24,7 @@ if(distance <= avioding_dist){
 
 // Prints the distance on the Serial Monitor
 //Serial.print("Distance: ");
-//Serial.print(distance);
-//Serial.println(" cm");
+Serial.print(distance);
+Serial.println("+");
 }
+

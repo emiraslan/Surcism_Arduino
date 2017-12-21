@@ -28,12 +28,15 @@ void goLeft(){
 }
 
 void stopMotors(){
+  motorIsEnabled = false;
   digitalWrite(M1E, LOW);
   digitalWrite(M2E, LOW);
 }
 
 void startMotors(){
+  motorIsEnabled = true;
   digitalWrite(M1E, HIGH);
   digitalWrite(M2E, HIGH);
 }
   
+

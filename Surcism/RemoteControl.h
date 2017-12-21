@@ -2,24 +2,30 @@ void startRemoteControl() {
   switch(command)
   {
     case 'f':
-    goForward();
+     goForward();
     break;
     
     case 'b':
-    goBackward();
+     goBackward();
     break;
     
     case 'l':
-    goLeft();
+    // It is reverse comparing to Ultrasonic
+     goRight();
     break;
     
     case 'r':
-    goRight();
+    // It is reverse comparing to Ultrasonic
+     goLeft();
     break;
     
     case 's':
-    stopMotors();
+    if(motorIsEnabled)
+      stopMotors();
+    else
+      startMotors();
     break;
   }
 }
+
 
